@@ -68,7 +68,6 @@ public class CLAMI {
 			
 			if (instances !=null){
 				double unit = (double) 100/(instances.numInstances());
-				//double unitFloor = Math.floor(unit);
 				double unitCeil = Math.ceil(unit);
 				
 				// TODO need to check how median is computed
