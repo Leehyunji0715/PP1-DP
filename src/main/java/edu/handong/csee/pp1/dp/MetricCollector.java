@@ -30,7 +30,7 @@ public class MetricCollector {
 		if(Main.INFO)
 			System.out.println(javaFiles.size() + " java files were found. Instances with metrics will be generated");
 		
-		rawInstances = new ArrayList<RawInstance>(); // Instancew저장할 수 있는 ArrayList 메모리에 생성.
+		rawInstances = new ArrayList<RawInstance>(); // Instancs저장할 수 있는 ArrayList 메모리에 생성.
 		
 		// 각 Java파일에 있는 코드에서 메트릭을 뽑아내기.
 		collectMetrics();
@@ -77,42 +77,50 @@ public class MetricCollector {
 			// (6) 다섯번째 메트릭 계산: 파일 안에 있는 if 구문의 개수
 			instance.setNumOfIfStatements(computeNumOfIfStatements(codeAST));
 			
+			// (7) 
+			
 			rawInstances.add(instance);
 		}	
 	}
-
+	
+	// (1) 첫번째 매트릭 계산: 가법게 코드 Line수 계산
 	private int computeLinesOfCode(String sourceCode) {
 		// 소스코드를 엔터(new line, \n)으로 나누어서 (split) 생성된 어레이의 크기를 리턴하면 라인수가 됨.
 		return sourceCode.split("\n").length;
 	}
 	
+	// (2) 두번째 메트릭 계산: 파일 안에 있는 변수의 개수
 	private int computeNumOfVariables(JavaASTParser codeAST) {
 		
 		// codeAST에서 변수선언된 요소들을 가져오고 몇 개나 있는지 크기를 가져온다.
 		return codeAST.getVariableDeclarationFragments().size();
 	}
 	
+	// (3) 세번째 메트릭 계산: 파일 안에 있는 매소드의 개수
 	private int computeNumOfMethods(JavaASTParser codeAST) {
 		// codeAST에서 매소드가 선언된 개수를 가져온다.
 		return codeAST.getMethodDeclarations().size();
 	}
 	
-	
-	
+	// (4) 네번째 메트릭 계산: 메소드 호출 개수 (method invocation)
 	private int computeNumOfMethodInvocations(JavaASTParser codeAST) {
 		// TASK1 TODO codeAST에서 매소드 호출된 개수를 가져온다.
 		return codeAST.getMethodInvocations().size();
 	}
 	
+	// (5) 다섯번째 메트릭 계산: 파일 안에 있는 for 루프의 개수
 	private int computeNumOfForLoops(JavaASTParser codeAST) {
 		// TASK1 TODO codeAST에서 for loop의 개수를 가져온다.
 		return codeAST.getForStatements().size();
 	}
 	
+	// (6) 다섯번째 메트릭 계산: 파일 안에 있는 if 구문의 개수
 	private int computeNumOfIfStatements(JavaASTParser codeAST) {
 		// TASK1 TODO codeAST에서 if문의 개수를 가져온다.
 		return codeAST.getIfStatements().size();
 	}
+	
+	
 	
 	public void saveAnArffFile() {
 		if(Main.INFO)

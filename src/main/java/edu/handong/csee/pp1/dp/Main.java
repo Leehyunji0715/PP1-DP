@@ -15,6 +15,6 @@ public class Main {
 		MetricCollector metricCollector = new MetricCollector(gitPath,arffFilePathToBeSaved);
 		
 		metricCollector.collect();//매트릭을 수집하는...
-		metricCollector.saveAnArffFile();//수집한 매트릭을 저
+		metricCollector.saveAnArffFile();//수집한 매트릭을 저장 
 	}
 }

@@ -54,16 +54,16 @@ public class CLAMITest {
 		CLAMI.main(args);
 	}*/
 	
-	@Test
-	public void testCLAMIWithYourSelectedProject() {
-		
-		// TASK3: Conduct defect prediction by using CLAMI models
-		// complete this test case for the generated arff files from Task 2
-		String[] args = {"-f","data/PP1-DP.arff",
-							"-l","label","-p", "buggy", "-m"};
-		
-		CLAMI.main(args);
-	}
+//	@Test
+//	public void testCLAMIWithYourSelectedProject() {
+//		
+//		// TASK3: Conduct defect prediction by using CLAMI models
+//		// complete this test case for the generated arff files from Task 2
+//		String[] args = {"-f","data/PP1-DP.arff",
+//							"-l","label","-p", "buggy", "-m"};
+//		
+//		CLAMI.main(args);
+//	}
 	
 
 	@Test

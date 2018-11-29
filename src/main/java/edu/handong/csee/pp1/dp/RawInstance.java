@@ -31,6 +31,8 @@ public class RawInstance {
 		this.javaFilePath = javaFilePath;
 	}
 	
+	
+	
 	public int getLinesOfCode() {
 		return values[0];
 	}
@@ -76,4 +78,6 @@ public class RawInstance {
 	public void setNumOfIfStatements(int numOfIfStatements) {
 		values[5] = numOfIfStatements;
 	}
+	//여기서부터 개인 메트릭 getter, setter 생성하
+	
 }
